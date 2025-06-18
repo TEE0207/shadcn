@@ -1,4 +1,4 @@
-import { Moon } from "lucide-react"
+import { LogOut, Moon, Settings, User } from "lucide-react"
 import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import {
@@ -34,13 +34,22 @@ const Navbar = () => {
                                 <AvatarFallback>CN</AvatarFallback>
                          </Avatar>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    {/* sideOffset create a space between the dropdown menu ans it's content dropdown */}
+                    <DropdownMenuContent sideOffset={10}>
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Profile</DropdownMenuItem>
-                        <DropdownMenuItem>Billing</DropdownMenuItem>
-                        <DropdownMenuItem>Team</DropdownMenuItem>
-                        <DropdownMenuItem>Subscription</DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <User className="h-[1.2rem] w-[1.2rem] mr-2" />
+                            profile
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Settings className="h-[1.2rem] w-[1.2rem] mr-2" />
+                            settings
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <LogOut  className="h-[1.2rem] w-[1.2rem] mr-2"/>
+                            Logout
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
 
