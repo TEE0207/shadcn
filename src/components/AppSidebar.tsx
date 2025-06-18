@@ -46,7 +46,7 @@ const AppSidebar = () => {
         // collapsible is a props in sidebar that has the type of icon, offcanvas and none.
         <Sidebar collapsible="icon">
 
-            <SidebarHeader>
+            <SidebarHeader className="py-4">
                   <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
@@ -82,6 +82,12 @@ const AppSidebar = () => {
                             }
                         </SidebarMenu>
                     </SidebarGroupContent>
+                </SidebarGroup>
+
+                <SidebarGroup>
+                    <SidebarGroupLabel>
+                        Projects
+                    </SidebarGroupLabel>
                 </SidebarGroup>
             </SidebarContent>
 

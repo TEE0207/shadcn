@@ -13,20 +13,21 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "./ui/button"
 import { useTheme } from "next-themes"
-import { SidebarTrigger } from "./ui/sidebar"
+import { SidebarTrigger, useSidebar } from "./ui/sidebar"
 
 const Navbar = () => {
 
     const {theme, setTheme} = useTheme()
+    // const {toggleSidebar} = useSidebar()
 
     return(
         <nav className="p-4 flex items-center justify-between"> 
 
         {/* LEFT */}
-        {/* This trigger is imported from sidebar ui which is inside the sidebar component and it is used to collaps the side bar */}
+        {/* This trigger is imported from sidebar ui which is inside the sidebar component and it is used to collaps the side bar, it is connected to this = <Sidebar collapsible="icon"> in the appSidebar */}
          <SidebarTrigger />
 
-         {/* <Button variant={"outline"}>Custom Button</Button> */}
+         {/* <Button variant="outline" onClick={toggleSidebar}>Custom Button</Button> */}
 
         {/* RIGHT */}
 
