@@ -24,7 +24,7 @@ const Navbar = () => {
         <nav className="p-4 flex items-center justify-between"> 
 
         {/* LEFT */}
-        {/* This trigger is imported from sidebar ui which is inside the sidebar component and it is used to collaps the side bar, it is connected to this = <Sidebar collapsible="icon"> in the appSidebar */}
+        {/* This trigger is imported from sidebar ui which is inside the sidebar component and it is used to collaps the side bar, it is connected to this = <Sidebar collapsible="icon"> in the appSidebar  and when it's clicked on the appSideBar will collaps*/}
          <SidebarTrigger />
 
          {/* <Button variant="outline" onClick={toggleSidebar}>Custom Button</Button> */}
