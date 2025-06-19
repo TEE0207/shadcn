@@ -1,10 +1,19 @@
-import { Button } from "@/components/ui/button"
-import { Navigation } from "lucide-react"
 
 
 const Homepage = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-4">
+      <div className=""></div>
+       <div className=""></div>
+        <div className=""></div>
+        <div className=""></div>
+        <div className=""></div>
+        <div className=""></div>
+
+
+
+
+
      
     </div>
   )
