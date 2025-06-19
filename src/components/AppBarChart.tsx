@@ -1,21 +1,21 @@
 "use client"
 
-import { ChartContainer, type ChartConfig } from "@/components/ui/chart"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "#2563eb",
+    color: "var(--chart-1)",
   },
   mobile: {
     label: "Mobile",
-    color: "#60a5fa",
+    color: "var(--chart-2)",
   },
 } satisfies ChartConfig
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
+  { month: "January", desktop: 180, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },
   { month: "March", desktop: 237, mobile: 120 },
   { month: "April", desktop: 73, mobile: 190 },
@@ -27,20 +27,44 @@ const AppBarChart = () => {
   return (
     <div className="">
         
-        <h1>Total Revenue</h1>
+        <h1 className="text-lg font-medium mb-6">Total Revenue</h1>
           <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
       <BarChart accessibilityLayer data={chartData}>
 
     {/* CartesianGrid is for the line behind the chart */}
             <CartesianGrid vertical={false} />
 
-             <XAxis
+   <XAxis
+            // dataKey is the month in the chartData in the array
       dataKey="month"
+
+      // tickLine is like the seperator
       tickLine={false}
+
       tickMargin={10}
+
       axisLine={false}
+
       tickFormatter={(value) => value.slice(0, 3)}
     />
+
+     <YAxis
+    
+
+      // tickLine is like the seperator
+      tickLine={false}
+
+      tickMargin={10}
+
+      axisLine={false}
+      
+    />
+
+    {/* chartTooltip is used to display the content of the chart when you hover on them */}
+           <ChartTooltip content={<ChartTooltipContent />} />
+
+           {/* used to display the color details */}
+        <ChartLegend content={<ChartLegendContent />} />
 
         <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
         <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
