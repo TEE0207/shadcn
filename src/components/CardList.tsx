@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Card, CardContent, CardFooter, CardTitle } from "./ui/card"
+import { Badge } from "./ui/badge"
 
 
 const popularContent =[
@@ -7,15 +8,15 @@ const popularContent =[
         id : 1,
         title : "JavaScript Tutorial",
         badge : "Coding",
- image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",      
-   count : 4300,
+        image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",      
+        count : 4300,
     },
      {
         id : 2,
         title : "Tech Trands 2025",
         badge : "Tech",
- image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",       
-  count : 3200,
+        image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",       
+        count : 3200,
     },
      {
         id : 3,
@@ -46,17 +47,18 @@ const latestTransactions =[
         id : 1,
         title : "Subscription Renewal",
         badge : "Lawal Taofeek",
- image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",       
-  count : 1400,
+        image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",       
+        count : 1400,
     },
-     {
+
+    {
         id : 2,
         title : "Payment for Services",
         badge : "Jane Smith",
         image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",     
          count : 2100,
     },
-     {
+    {
         id : 3,
         title : "Subscription Renewal",
         badge : "Michael Johnson",
@@ -97,16 +99,17 @@ const CardList = ({title} : {title : string}) => {
 
             {
                 list.map(item =>(
-                    <Card key = {item.id}>
+                    <Card key = {item.id} className="flex-row items-center justify-between gap-4 p-4">
                         <div className="w-12 h-12 rounded-sm relative overflow-hidden">
                             <Image src={item.image} alt={item.title} fill className = "object-cover"/>
                         </div>
 
-                        <CardContent>
-                            <CardTitle> {item.title}</CardTitle>
+                        <CardContent className="p-0 flex-1">
+                            <CardTitle className="text-[0.7rem] font-medium"> {item.title}</CardTitle>
+                            <Badge variant="outline">{item.badge}</Badge>
                         </CardContent>
 
-                        <CardFooter>{item.count / 1000}k</CardFooter>
+                        <CardFooter className="p-0">{item.count / 1000}k</CardFooter>
                     </Card>
                 ))
             }
