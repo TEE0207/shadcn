@@ -7,22 +7,37 @@ const popularContent =[
         id : 1,
         title : "JavaScript Tutorial",
         badge : "Coding",
-        image : "https://www.pexels.com/photo/scenic-autumn-road-in-upton-massachusetts-29095738/",
-        count : 4300,
+ image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",      
+   count : 4300,
     },
      {
         id : 2,
         title : "Tech Trands 2025",
         badge : "Tech",
-        image : "https://www.pexels.com/photo/scenic-autumn-road-in-upton-massachusetts-29095738/",
-        count : 3200,
+ image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",       
+  count : 3200,
     },
      {
         id : 3,
         title : "Image Generation with AI",
         badge : "AI",
-        image : "https://www.pexels.com/photo/scenic-autumn-road-in-upton-massachusetts-29095738/",
-        count : 2400,
+        image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&      cs=tinysrgb&w=800",      
+          count : 2400,
+    },
+    {
+        id : 4,
+        title : "React Hooks Explained",
+        badge : "Coding",
+        image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",
+        count : 1500,
+    },
+
+     {
+        id : 5,
+        title : "Image Generation With AI",
+        badge : "AI",
+        image : "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&w=800",
+        count : 1200,
     },
 ]
 
@@ -31,22 +46,38 @@ const latestTransactions =[
         id : 1,
         title : "Subscription Renewal",
         badge : "Lawal Taofeek",
-        image : "https://www.pexels.com/photo/scenic-autumn-road-in-upton-massachusetts-29095738/",
-        count : 1400,
+ image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",       
+  count : 1400,
     },
      {
         id : 2,
         title : "Payment for Services",
         badge : "Jane Smith",
-        image : "https://www.pexels.com/photo/scenic-autumn-road-in-upton-massachusetts-29095738/",
-        count : 2100,
+        image : "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=800",     
+         count : 2100,
     },
      {
         id : 3,
         title : "Subscription Renewal",
         badge : "Michael Johnson",
-        image : "https://www.pexels.com/photo/scenic-autumn-road-in-upton-massachusetts-29095738/",
+        image :  "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&       cs=tinysrgb&w=800",      
         count : 2400,
+    },
+
+     {
+        id : 4,
+        title : "Subscription Renewal",
+        badge : "Michael Johnson",
+        image :  "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&       cs=tinysrgb&w=800",      
+        count : 2700,
+    },
+
+     {
+        id : 5,
+        title : "Subscription Renewal",
+        badge : "Michael Johnson",
+        image :  "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&       cs=tinysrgb&w=800",      
+        count : 3400,
     },
 ]
 
@@ -56,7 +87,7 @@ const CardList = ({title} : {title : string}) => {
 
 
     // title is the props we'll be using in the CardList container 
-    
+
     const list = title === "Popular Content" ? popularContent : latestTransactions
 
   return (
