@@ -19,6 +19,7 @@ const TodoList = () => {
     <div>
         <h1 className="text-lg font-medium mb-6">Todo List</h1>
 
+  {/* we provide open and onOpenChange to enable us to use it */}
        <Popover open ={open} onOpenChange = {setOpen} >
             <PopoverTrigger asChild>
                 
@@ -26,19 +27,20 @@ const TodoList = () => {
                     <Calendar1 />
                     {date ? format(date, "ppp") : <span>Pick a date</span>}
                 </Button>
+
             </PopoverTrigger>
 
 
-            <PopoverContent>
+            <PopoverContent className="p-0 w-auto">
                 
             <Calendar
                 mode="single"
                 selected={date}
-                onSelect ={(date) =>{
+                onSelect ={(date) => {
                     setDate(date)
                     setOpen(false)
+                    
                 }}
-                className="rounded-lg border"
             />
 
             </PopoverContent>
