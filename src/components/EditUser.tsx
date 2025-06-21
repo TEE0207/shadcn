@@ -4,10 +4,18 @@ import { useForm } from "react-hook-form"
 import { SheetContent, SheetDescription, SheetHeader, SheetTitle } from "./ui/sheet"
 import { zodResolver } from "@hookform/resolvers/zod"
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 import { z } from "zod"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
 import { Input } from "./ui/input"
+import { Button } from "./ui/button"
  
 const formSchema = z.object({
     // The form field with it's error message handled
@@ -41,7 +49,7 @@ const EditUser = () => {
                             <SheetHeader>
                             <SheetTitle className="mb-4">Edit User</SheetTitle>
 
-                            <SheetDescription>
+                            <SheetDescription asChild>
                                 <Form {...form}>
                                     <form className="space-y-8">
                                         <FormField control = {form.control} name = "username"  render = {({field}) => (                            
@@ -57,7 +65,79 @@ const EditUser = () => {
                                     </FormItem>
                                         
                                         
-                                 )}/>
+                                         )}/>
+
+                                          <FormField control = {form.control} name = "email"  render = {({field}) => (                            
+                                     <FormItem>
+                                            <FormLabel>Email</FormLabel>
+                                            <FormControl>
+                                                <Input {...field} />
+                                            </FormControl>
+                                            <FormDescription>
+                                                Only admin can see your email..
+                                            </FormDescription>
+                                            <FormMessage />
+                                    </FormItem>
+                                        
+                                        
+                                         )}/>
+
+                                          <FormField control = {form.control} name = "phone"  render = {({field}) => (                            
+                                     <FormItem>
+                                            <FormLabel>Phone Number</FormLabel>
+                                            <FormControl>
+                                                <Input {...field} />
+                                            </FormControl>
+                                            <FormDescription>
+                                                Only admin can see your phone number.
+                                            </FormDescription>
+                                            <FormMessage />
+                                    </FormItem>
+                                        
+                                        
+                                         )}/>
+
+                                           <FormField control = {form.control} name = "location"  render = {({field}) => (                            
+                                     <FormItem>
+                                            <FormLabel>Location</FormLabel>
+                                            <FormControl>
+                                                <Input {...field} />
+                                            </FormControl>
+                                            <FormDescription>
+                                                This is the public location
+                                            </FormDescription>
+                                            <FormMessage />
+                                    </FormItem>
+                                        
+                                        
+                                         )}/>
+
+                                           <FormField control = {form.control} name = "role"  render = {({field}) => (                            
+                                     <FormItem>
+                                            <FormLabel>Role</FormLabel>
+                                            <FormControl>
+                                                {/* we import select options from shadcn */}
+                                            <Select>
+                                                <SelectTrigger>
+                                                    <SelectValue placeholder="Role" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="admin">Admin</SelectItem>
+                                                    <SelectItem value="user">User</SelectItem>
+                                                </SelectContent>
+                                          </Select>
+
+                                            </FormControl>
+                                            <FormDescription>
+                                                Only verified users can be admin
+                                            </FormDescription>
+                                            <FormMessage />
+                                    </FormItem>
+                                        
+                                        
+                                         )}/>
+
+                                         <Button type ="submit">Submit</Button>
 
                                     </form>
 
