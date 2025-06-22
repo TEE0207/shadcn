@@ -8,6 +8,8 @@ import React from 'react'
 import { Sheet, SheetTrigger} from "@/components/ui/sheet"
 import { Button } from '@/components/ui/button'
 import EditUser from '@/components/EditUser'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import AppLineChart from '@/components/AppLineChart'
 
 const SingleUserPage = () => {
   return (
@@ -103,7 +105,7 @@ const SingleUserPage = () => {
                         <SheetTrigger asChild>
                             <Button>Edit User</Button>
                         </SheetTrigger>
-                        {/* imported component */}
+                        {/* imported  EditUser component */}
                         <EditUser />
                        
                    </Sheet>
@@ -141,18 +143,11 @@ const SingleUserPage = () => {
                         </div>
                         <p className='text-sm  text-muted-foreground mt-4'>Joined on 2025.01.01</p>
 
-                        
-
-
-
-
-
-
                      </div>
 
                 </div>
 
-                                 {/* CARDLIST CONTAINER */}
+                                 {/* CARDLIST CONTAINER WITH CARDLIST COMPONENT */}
                 <div className='bg-primary-foreground p-4 rounded-lg'>
                     <CardList title='Recent Transactions' />
                 </div>
@@ -165,10 +160,26 @@ const SingleUserPage = () => {
         <div className='w-full xl:w-2/3 space-y-6'> 
 
               {/* USER CARD CONTAINER */}
-           <div className='bg-primary-foreground p-4 rounded-lg'>User Card</div>
+           <div className='bg-primary-foreground p-4 rounded-lg space-y-2'>
+            
+                <div className='flex items-center gap-2'>
+                <Avatar className='size-12'>
+                    <AvatarImage src= "#" />
+                    <AvatarFallback>Lawal Taofeek</AvatarFallback>
+                </Avatar>
+
+                <h1 className='text-xl font-semibold'>Lawal Taofeek</h1>
+
+                </div>
+
+                <p className='text-sm text-muted-foreground'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit animi perferendis repellendus voluptatibus modi odio!</p>
+           </div>
            
              {/* CHART CONTAINER */}
-           <div className='bg-primary-foreground p-4 rounded-lg'>Chart</div>
+           <div className='bg-primary-foreground p-4 rounded-lg'>
+            <h1 className='text-xl font-semibold'>User Activity</h1>
+            <AppLineChart />
+            </div>
 
         
          </div>
