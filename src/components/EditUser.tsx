@@ -117,7 +117,9 @@ const EditUser = () => {
                                             <FormLabel>Role</FormLabel>
                                             <FormControl>
                                                 {/* we import select options from shadcn */}
-                                            <Select>
+                                            <Select
+                                             value={field.value}
+                                              onValueChange={field.onChange}>
                                                 <SelectTrigger>
                                                     <SelectValue placeholder="Role" />
                                                 </SelectTrigger>
