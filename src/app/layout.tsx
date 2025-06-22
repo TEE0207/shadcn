@@ -46,6 +46,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
+          {/* To make use of the sidebar component you need to use sidebarprovider to wrap the whole page */}
            <SidebarProvider defaultOpen ={defaultOpen}>
               <AppSidebar />
 
