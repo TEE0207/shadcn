@@ -21,7 +21,7 @@ const Navbar = () => {
     // const {toggleSidebar} = useSidebar()
 
     return(
-        <nav className="p-4 flex items-center justify-between"> 
+        <nav className="p-4 flex items-center justify-between sticky top-0 bg-background z-10"> 
 
         {/* LEFT */}
         {/* This trigger is imported from sidebar ui which is inside the sidebar component and it is used to collaps the side bar, it is connected to this = <Sidebar collapsible="icon"> in the appSidebar  and when it's clicked on the appSideBar will collaps*/}
