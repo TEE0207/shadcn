@@ -1,10 +1,11 @@
 "use client"
  
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table"
-import { MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 export type Payment ={
 
@@ -17,15 +18,37 @@ export type Payment ={
 
 export const columns: ColumnDef<Payment>[] = [
 
-   
-  {
-    accessorKey: "email",
-    header: "Email",
-  },
-   {
+    {
+      id : "select",
+      header :({table}) =>(
+        <Checkbox onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        checked = {table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")} />
+      ),
+      cell : ({row}) =>(
+        <Checkbox  onCheckedChange={(value) => row.toggleSelected(!!value)} checked ={row.getIsSelected()}/>
+      )
+    },
+ {
     accessorKey: "username",
     header: "User",
   },
+   
+  {
+
+    
+    accessorKey: "email",
+   header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Email
+          <ArrowUpDown />
+        </Button>
+      )}
+  },
+  
   {
     accessorKey: "status",
     header: "Status",

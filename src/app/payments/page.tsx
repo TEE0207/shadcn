@@ -12,6 +12,69 @@ const getData = async () : Promise<Payment[]> => {
             username : "john Doe",
             email : "johndoe@gmail.com"
         },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
+         {
+            id: "728ed521",
+            amount : 134,
+            status : "processing",
+            username : "john Doe",
+            email : "johndoe@gmail.com"
+        },
 
         {
             id: "728ed522",
