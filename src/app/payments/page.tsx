@@ -1,6 +1,7 @@
 import { columns, Payment } from "./columns"
 import { DataTable } from "./data-table"
 
+// The payment imported here is the type
 const getData = async () : Promise<Payment[]> => {
 
     return [
